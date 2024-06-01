@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>java mvc maven</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+              rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+              crossorigin="anonymous">
+    </head>
+  <body style="background-color:#66a1c9;">
+        <!--Menu tipo navdar vertical-->
+        <nav class="navbar navbar-dark bg" style=" background-color:#66a1c9">
+            <div class="container-fluid">
+            </div>
+        </nav>    
+        <br>
+        <br>
+        <br>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div id="miDiv" class="col-xl-9 col-md-8 col-sm-10">       
+                    <div id="miDiv">
+                        <div  style=" background-color:#f1f1f1">                     
+                            <!--Barras de direccion-->
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="container-fluid ">
+                               
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    </ul>
+
+                                </div>
+
+                                <br>
+
+                            </nav>
+
+                            <div class="container">                      
+                                <div class="col-xl-12 col-md-8 col-sm-10 shadow p-3 mb-6 bg-white rounded">
+
+                                    <input type="file" id="archivo" onchange="cargarArchivo(event)">  
+
+                                </div>
+                            </div>
+
+                            <br>
+                            <br>
+                            <div class="container">
+                               
+                                <div class="row justify-content-center align-items-center">
+                                     
+                                    <div class="col-xl-5 col-md-8 col-sm-10 shadow p-3 mb-5 bg-white rounded">
+                                        <h4> Ingreso Java </h4>
+                                        <div>
+                                            <textarea id="my-textarea" class="form-control" rows="20" cols="50"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 rounded text-center ">
+                                        <button class="btn text-white " id="btnagregarMenu" style="background-color: rgb(238, 150, 78);">
+                                            <b>Convertir</b>
+                                        </button>
+                                        <br>
+                                        <br>
+                                        <button class="btn text-white " type="button" onclick="limpiarTextArea()" style="background-color: rgb(238, 150, 78);" >
+                                            <b>Limpiar</b>
+                                        </button>
+                                    </div>
+                                    <div class="col-xl-5 col-md-8 col-sm-10 shadow p-3 mb-5 bg-white rounded">
+                                        <h4> Salida Phyton </h4>
+                                        <div>
+                                            <textarea id="my-textarea2" class="form-control" rows="20" cols="50"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //Cargar archivo y mostrarlo en la pantalla
+            function cargarArchivo(event) {
+
+                var archivo = event.target.files[0];
+                var lector = new FileReader();
+                lector.onload = function (e) {
+                    var contenido = e.target.result;
+                    document.getElementById('my-textarea').value = contenido;
+                };
+
+                lector.readAsText(archivo);
+            }
+
+            function limpiarTextArea() {
+                document.getElementById("my-textarea").value = "";
+            }
+
+            //<pre id="contenidoArchivo"></pre>
+        </script>
+        <!-- Libreria pdf-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+        <!-- Script Boostrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script><!-- comment -->
+    </body>
+</html>
